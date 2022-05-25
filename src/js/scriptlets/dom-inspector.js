@@ -893,6 +893,11 @@ const bootstrap = function(ev) {
     }
     const pickerDoc = ev.target.contentDocument;
 
+    const colorSchemeMeta = pickerDoc.createElement('meta');
+    colorSchemeMeta.name = "color-scheme";
+    colorSchemeMeta.content = "light-dark";
+    pickerDoc.head.appendChild(colorSchemeMeta);
+
     const style = pickerDoc.createElement('style');
     style.textContent = [
         'body {',
